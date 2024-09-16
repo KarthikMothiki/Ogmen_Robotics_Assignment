@@ -22,5 +22,3 @@ This package contains the World file  of the given environment.
 
 4. This should launch the robot model in Gazebo with the specified specified environments.
 
-file:///home/km/Pictures/Screenshots/Screenshot%20from%202024-09-16%2022-39-14.png
--81:-6:85:47

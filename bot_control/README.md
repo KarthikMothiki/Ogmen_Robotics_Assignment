@@ -44,6 +44,7 @@ This script moves the robot through predefined waypoints and aligns its orientat
 ros2 run bot_control move_robot
 ```
 
+![Video Link](https://drive.google.com/file/d/1XSYWK0PRhd1JiB8qL457hNljVQPyJThK/view?usp=sharing)
 
 **reading_laser.py**
 This script filters laser scan data and publishes it on a new topic /filtered_scan.

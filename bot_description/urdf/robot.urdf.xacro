@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+    <xacro:include filename="robot_core.xacro" />
+    <xacro:include filename="gazebo_control.xacro" />
+    <xacro:include filename="lidar.xacro" />
+    <xacro:include filename="camera.xacro" />
+
+    <ros2_control name="DiffDriveController" type="system">
+    <hardware>
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+
+    <joint name="left_wheel_joint">
+        <state_interface name="velocity"/>
+        <command_interface name="velocity"/>
+    </joint>
+
+    <joint name="right_wheel_joint">
+        <state_interface name="velocity"/>
+        <command_interface name="velocity"/>
+    </joint>
+
+    <controller name="diff_drive_controller" type="diff_drive_controller/DiffDriveController">
+        <param name="wheel_separation">0.35</param> <!-- Update if necessary -->
+        <param name="wheel_radius">0.06</param>     <!-- Update if necessary -->
+        <param name="cmd_vel_timeout">0.5</param>
+        <param name="linear.x.has_velocity_limits">true</param>
+        <param name="linear.x.max_velocity">1.0</param>
+        <param name="angular.z.has_velocity_limits">true</param>
+        <param name="angular.z.max_velocity">1.0</param>
+        <left_wheel>left_wheel_joint</left_wheel>
+        <right_wheel>right_wheel_joint</right_wheel>
+    </controller>
+</ros2_control>
+
+    
+</robot>

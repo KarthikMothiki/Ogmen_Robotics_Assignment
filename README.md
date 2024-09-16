@@ -66,11 +66,9 @@ This repository contains a set of ROS 2 packages for controlling and describing 
 18 directories, 33 files
 
 ```
-
-Check the following README.md Files for the execution of the following questions:
-Question 1 :
-- [ ]  Build a new catkin workspace named **[your_name]_ws**. Then make a new package in [your_name]_ws/src named **bot_description.**
-  ```
+## Utilization
+Create your workspace
+```
   source /opt/ros/humble/setup.bash
   source /usr/share/gazebo/setup.bash
   
@@ -78,19 +76,16 @@ Question 1 :
   cd karthik_ws
   colcon build
   source install/setup/bash
-  ```
-- [ ]  In the **bot_description** package, build a URDF of the given robot’s mechanical engineering drawing.
-  ```
-  cd src/
-  ros2 pkg create --build_type ament_camake --license Apache-2.0 bot_description
-  cd ..
-  colcon build
-  source install/setup.bash
-  ```
+```
+Clone the repo into your src/ folder of the workspace
+```
+cd <path_to_your ws/src>
+git clone https://github.com/KarthikMothiki/Ogmen_Robotics_Assignment/
+```
+Now build the packages
+```
+cd ..
+colcon build
+source install/setup.bash
+```
 
-  Check the urdf directory for the xacro files
-  
-- [ ]  Make a new folder bot_description/launch. It should contain the launch file (rviz.launch) to visualise the robot in rviz.
-   ```
-   
-   ```
